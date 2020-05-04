@@ -1,0 +1,59 @@
+.header{
+    width: 100%;
+    height: 80px;
+    display: block;
+    background-color: mediumaquamarine;
+}
+
+.header2 {
+    width: 1000px;
+    height: 100%;
+    display: block;
+    margin: 0 auto;
+}
+
+.logo{
+    height: 100%;
+    display: table;
+    margin: 0 auto;
+}
+
+.logo h1{
+    color: azure;
+    height: 100%;
+    display: table-cell;
+    vertical-align: middle;
+    font-family: 'Krona One', sans-serif;
+    font-size: 36px;
+    font-weight: 200;
+}
+
+.logo h1 span{
+    color: azure;
+    font-weight: 999;
+}
+
+.navigation {
+    float: right;
+    height: 100%;
+}
+
+.navigation a{
+    height: 100%;
+    display: table;
+    float: left;
+    padding: 0px 20px;
+}
+
+.navigation a:last-child{
+    padding-right: 0;
+}
+
+.navigationa li {
+    display: table-cell; 
+    vertical-align: middle;
+    height: 100%;
+    color: white;
+    font-family: 'Krona One', sans-serif;
+    font-size: 16px;
+} 
