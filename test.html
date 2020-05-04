@@ -6,7 +6,34 @@
     <link href="https://fonts.googleapis.com/css2?family=Krona+One&display=swap" rel="stylesheet"> 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" type="text/css" href="stylesheet2.css">
+    
+    <script src="https://code.jquery.com/jquery-3.5.0.min.js" integrity="sha256-xNzN2a4ltkB44Mc/Jz3pT4iU1cmeR0FkXs4pru/JxaQ="crossorigin="anonymous"></script>
+    
+    <script>
+        function showResult(str){
+            if(str.length==0){
+                document.getElementById("livesearch").innerHTML="";
+                document.getElementById("livesearch").style.border="0px";
+                return;
+            }
+            if(window.XMLHttpRequest){
+                xmlhttp=new XMLHttpRequest();
+            }
+            else{
+                xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+            }
+            xmlhttp.onreadystatechange=function(){
+                if(this.readyState==4 && this.status==200){
+                    document.getElementById("livesearch").innerHTML=this.responseText;
+                    document.getElementById("livesearch").style.border="1px solid #A5ACB2";
+                }
+            }
+            xmlhttp.open("GET","livesearch.php?q="str, true);
+            xmlhttp.send();
+        }
+    </script>    
 </head>
+    
 <body>
     <div class="header">
         <div class="header2">
@@ -14,10 +41,14 @@
                 <h1>Auto <span>Exotic</span></h1>
             </div>
             <div class="searchbar">
-                <input type="text" name="" class="searchtext" placeholder="Enter car brand (e.g. Mercedes)"/>
                 <a class="searchextend">
                     <i class="fa fa-search"></i>
                 </a>
+                
+<!-- Live Search and search bar display -->
+                <input type="text" name="" class="searchtext" placeholder="Enter car brand (e.g. Mercedes)" size="25" onkeyup="showResult(this.value)"/>
+                <div id="livesearch"></div>
+                
             </div>
         </div>  
     </div>
