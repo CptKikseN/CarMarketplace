@@ -1,58 +1,183 @@
-body {
-  background-color: #fff;
-  margin: 0; 
-  padding: 0;}
-
-#page {
-  background-color: #c5c5c5;
-  margin: 0px 0px 0px 0px;
-  position: relative;
-  top: -25px;
-  bottom: 25px;
-  text-align: center;}
-
-h1 {
-  background-repeat: no-repeat;
-  background-position: center center;
-  text-align: center;
-  font-family: "Courier New", Courier, monospace;
-  letter-spacing: .3em;
-  color: #fff;
-  padding: 30px 10px 20px 10px;
+/*Header and logo*/
+.header{
+    width: 100%;
+    height: 80px;
+    display: block;
+    background-color: darkslateblue;
 }
 
-input{
-    float: right;
-    margin-top: -25px;
-    margin-right: 35px;
+.header2 {
+    width: 1000px;
+    height: 100%;
+    display: block;
+    margin: 0 auto;
 }
 
-ul {
-  border:none;
-  padding: 0;
-  margin: 0;}
+.logo{
+    height: 100%;
+    display: table;
+    margin: 0 auto;
+}
+
+.logo h1{
+    color: azure;
+    height: 100%;
+    display: table-cell;
+    vertical-align: middle;
+    font-family: 'Krona One', sans-serif;
+    font-size: 36px;
+    font-weight: 200;
+}
+
+.logo h1 span{
+    color: azure;
+    font-weight: 999;
+}
 
 .navigation {
-    float: left;
+    float: right;
     height: 100%;
 }
 
-.navigation a {
+.navigation a{
     height: 100%;
     display: table;
     float: left;
-    padding: 0px 20px 25px 25px;
-    margin-top: -25px;
+    padding: 0px 20px;
 }
 
-.navigation a:last-child {
+.navigation a:last-child{
     padding-right: 0;
 }
 
-.navigation a li {
+.navigationa li {
     display: table-cell; 
     vertical-align: middle;
     height: 100%;
-    color: black;
-    font-family: 'Montserrat';
-    font-size: 18px;
+    color: white;
+    font-family: 'Krona One', sans-serif;
+    font-size: 16px;
+} 
+
+/*Background: full-height image, centered*/
+
+body, html {
+ margin: 0;
+ padding: 0;
+ background-image: url("ferrari_retrowave.jpg");
+ height: 100%;
+ background-position: center;
+ background-repeat: no-repeat;
+ background-size: cover;
+}
+
+/*Extending search bar*/
+
+.searchbar {
+ position: absolute;
+ top: 50%;
+ left: 50%;
+ transform: translate(-50%, -50%);
+ background: darkslateblue;
+ height: 40px;
+ border-radius: 40px;
+ padding: 10px;
+}
+
+.searchbar:hover > .searchtext {
+ width: 240px;
+ padding: 0 6px;
+}
+
+.searchbar:hover > searchextend {
+ background: azure;
+ color: azure;
+}
+
+.searchextend {
+ color: darkslateblue;
+ float: right;
+ width: 40px;
+ height: 40px;
+ border-radius: 50%;
+ display: flex;
+ justify-content: center;
+ align-items: center;
+ transition: 0.2s;
+ color: azure;
+ cursor: pointer;
+}
+
+.searchextend > i {
+ font-size: 20px;
+}
+
+.searchtext {
+ border: none;
+ background: none;
+ outline: none;
+ float: left;
+ padding: 0;
+ font-size: 14px;
+ transition: 0.2s;
+ line-height: 40px;
+ width: 0px;
+ color: azure;
+}
+
+/*Placeholder Color (for Searchbar)*/
+
+::placeholder {
+  color: azure;
+}
+
+/* LOGIN PAGE*/
+
+.login{
+    width: 300px;
+    padding: 40px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: darkslateblue;
+    text-align: center;
+}
+
+.login h1{
+    font-family: 'Krona One', sans-serif;
+    color: azure;
+    text-transform: uppercase;
+    font-weight: 200;
+}
+
+.login input[type="text"], .login input[type="password"]{
+    border: 0;
+    background: none;
+    display: block;
+    margin: 20px auto;
+    text-align: center;
+    font-size: 14px;
+    border: 2px solid azure;
+    padding: 14px 10px;
+    width: 200px;
+    outline: none;
+    color: azure;
+    border-radius: 24px;
+}
+
+.login input[type="submit"]{
+    border: 0;
+    background: azure;
+    display: block;
+    margin: 20px auto;
+    text-align: center;
+    border: 2px solid azure;
+    font-family: 'Krona One', sans-serif;
+    padding: 14px 10px;
+    width: 200px;
+    outline: none;
+    color: darkslateblue;
+    border-radius: 24px;
+    cursor: pointer;
+}

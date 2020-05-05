@@ -1,14 +1,11 @@
-<html>
-<body>
-
-<!-- Takes you to the html page -->
-
 <?php
 
-    include_once('sign-up.php');
+    session_start();
+    echo $_SESSION['email_signup'];
+    echo $_SESSION['password_signup'];
 
-    $email = $_POST['loginemail'];
-    $password = $_POST['loginpassword'];
+    $email = $_SESSION['loginemail'];
+    $password = $_SESSION['loginpassword'];
     
     if ($email == $email_signup and $password == $password_signup)
     {
@@ -20,6 +17,3 @@
     }
     
 ?>
-    
-</body>
-</html>
