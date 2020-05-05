@@ -2,14 +2,11 @@
 <body>
 
 <!-- Takes you to the html page -->
-    
+
 <?php
-    
-    $email_signup = $_POST['signupemail'];
-    $password_signup = $_POST['signuppassword'];
-    
-    header( 'Location: login-page.html' );
-    
+
+    include_once('sign-up.php');
+
     $email = $_POST['loginemail'];
     $password = $_POST['loginpassword'];
     
@@ -21,8 +18,8 @@
     {
         echo 'Wrong Username/Password';
     }
-
+    
 ?>
-
+    
 </body>
 </html>
