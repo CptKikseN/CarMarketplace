@@ -130,3 +130,54 @@ body, html {
 ::placeholder {
   color: azure;
 }
+
+/* LOGIN PAGE*/
+
+.login{
+    width: 300px;
+    padding: 40px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: darkslateblue;
+    text-align: center;
+}
+
+.login h1{
+    font-family: 'Krona One', sans-serif;
+    color: azure;
+    text-transform: uppercase;
+    font-weight: 200;
+}
+
+.login input[type="text"], .login input[type="password"]{
+    border: 0;
+    background: none;
+    display: block;
+    margin: 20px auto;
+    text-align: center;
+    font-size: 14px;
+    border: 2px solid azure;
+    padding: 14px 10px;
+    width: 200px;
+    outline: none;
+    color: azure;
+    border-radius: 24px;
+}
+
+.login input[type="submit"]{
+    border: 0;
+    background: azure;
+    display: block;
+    margin: 20px auto;
+    text-align: center;
+    border: 2px solid azure;
+    font-family: 'Krona One', sans-serif;
+    padding: 14px 10px;
+    width: 200px;
+    outline: none;
+    color: darkslateblue;
+    border-radius: 24px;
+    cursor: pointer;
+}
