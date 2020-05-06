@@ -1,10 +1,12 @@
 <?php
     
-    session_start();
+    include 'config.php';
 
-    $email_signup = $_SESSION['signupemail'];
-    $password_signup = $_SESSION['signuppassword'];
-    
-    header( 'Location: login-page.html' );
+    if(isset($_POST["signupbtn"])){
+        $email = $_POST["signupemail"];
+        $password = $_POST["signuppassword"];
+        $insertdata = mysqli_query($connect, "INSERT INTO `user` (`email`, `password`) VALUES ('$email', '$password')");
+        header( 'Location: login-page.html' );
+    }
 
 ?>

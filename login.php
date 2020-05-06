@@ -1,19 +1,19 @@
 <?php
 
-    session_start();
-    echo $_SESSION['email_signup'];
-    echo $_SESSION['password_signup'];
+    include 'config.php';
 
-    $email = $_SESSION['loginemail'];
-    $password = $_SESSION['loginpassword'];
-    
-    if ($email == $email_signup and $password == $password_signup)
-    {
-        header( 'Location: search-page.html' );
+    if(isset($_POST["loginbtn"])){
+        $email = $_POST['loginemail'];
+        $password = $_POST['loginpassword'];
+        $getdata = mysqli_query($connect, "SELECT * FROM user WHERE email = '$email' AND password = '$password'");
+        $dataarray = mysqli_fetch_array($getdata);
+        if($dataarray["email"] == $email &&  $dataarray["password"] == $password)
+        {
+            header( 'Location: search-page.html' );
+        }else
+        {
+            header( 'Location: login-page.html' );
+        }
     }
-    else
-    {
-        echo 'Wrong Username/Password';
-    }
-    
+
 ?>
