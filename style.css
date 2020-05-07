@@ -1,9 +1,12 @@
 /*Header and logo*/
 .header{
-    width: 100%;
+    width: 99%;
     height: 80px;
     display: block;
     background-color: darkslateblue;
+    border-radius: 15px;
+    margin: auto;
+    margin-top: 10px;
 }
 
 .header2 {
@@ -80,7 +83,7 @@ body, html {
  transform: translate(-50%, -50%);
  background: darkslateblue;
  height: 40px;
- border-radius: 40px;
+ border-radius: 15px;
  padding: 10px;
 }
 
@@ -141,6 +144,7 @@ body, html {
     left: 50%;
     transform: translate(-50%, -50%);
     background: darkslateblue;
+    border-radius: 15px;
     text-align: center;
 }
 
@@ -159,11 +163,11 @@ body, html {
     text-align: center;
     font-size: 14px;
     border: 2px solid azure;
-    padding: 14px 10px;
+    padding: 15px 10px;
     width: 200px;
     outline: none;
     color: azure;
-    border-radius: 24px;
+    border-radius: 15px;
 }
 
 .login input[type="submit"]{
@@ -172,20 +176,21 @@ body, html {
     display: block;
     margin: 20px auto;
     text-align: center;
-    border: 2px solid azure;
     font-family: 'Krona One', sans-serif;
-    padding: 14px 10px;
-    width: 200px;
+    padding: 17px 10px;
+    width: 226px;
     outline: none;
     color: darkslateblue;
-    border-radius: 24px;
+    border-radius: 15px;
     cursor: pointer;
 }
 
 /* Car infobox */
 
 .infobox{
-    width: 450px;
+    width: 715px;
+    height: 675px;
+    border-radius: 15px;
     background: darkslateblue;
     padding: 40px;
     text-align: center;
@@ -198,4 +203,24 @@ body, html {
 .infobox h1{
     font-size: 30px;
     font-family: 'Krona One', sans-serif;
+}
+
+.infoboximg{
+    border-radius: 15px;
+}
+
+.infobox ul, p{
+    text-align: left;
+    display: inline-block;
+    box-sizing: border-box;
+}
+
+.infobox ul{
+    width: 50%;
+}
+
+.infobox p{
+    float: right;
+    width: 50%;
+    padding: 0;
 }
