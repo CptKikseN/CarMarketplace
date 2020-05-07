@@ -3,7 +3,7 @@
     width: 99%;
     height: 80px;
     display: block;
-    background-color: darkslateblue;
+    background-color: black;
     border-radius: 15px;
     margin: auto;
     margin-top: 10px;
@@ -67,7 +67,7 @@
 body, html {
  margin: 0;
  padding: 0;
- background-image: url("ferrari_retrowave.jpg");
+ background-image: url(img/background.jpg);
  height: 100%;
  background-position: center;
  background-repeat: no-repeat;
@@ -81,7 +81,7 @@ body, html {
  top: 50%;
  left: 50%;
  transform: translate(-50%, -50%);
- background: darkslateblue;
+ background: black;
  height: 40px;
  border-radius: 15px;
  padding: 10px;
@@ -98,7 +98,7 @@ body, html {
 }
 
 .searchextend {
- color: darkslateblue;
+ color: black;
  float: right;
  width: 40px;
  height: 40px;
@@ -143,7 +143,7 @@ body, html {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    background: darkslateblue;
+    background: black;
     border-radius: 15px;
     text-align: center;
 }
@@ -180,7 +180,7 @@ body, html {
     padding: 17px 10px;
     width: 226px;
     outline: none;
-    color: darkslateblue;
+    color: black;
     border-radius: 15px;
     cursor: pointer;
 }
@@ -191,7 +191,7 @@ body, html {
     width: 715px;
     height: 675px;
     border-radius: 15px;
-    background: darkslateblue;
+    background: black;
     padding: 40px;
     text-align: center;
     margin: auto;
@@ -223,4 +223,12 @@ body, html {
     float: right;
     width: 50%;
     padding: 0;
+}
+
+.sharebuttons{
+    display: flex;
+    flex-wrap: wrap;
+    position: absolute;
+    left: 53%;
+    top: 87%;
 }
