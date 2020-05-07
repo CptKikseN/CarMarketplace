@@ -6,52 +6,96 @@
     <link href="https://fonts.googleapis.com/css2?family=Krona+One&display=swap" rel="stylesheet"> 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" type="text/css" href="stylesheet.css">
-    
     <script src="https://code.jquery.com/jquery-3.5.0.min.js" integrity="sha256-xNzN2a4ltkB44Mc/Jz3pT4iU1cmeR0FkXs4pru/JxaQ="crossorigin="anonymous"></script>
     
-    <script>
-        function showResult(str){
-            if(str.length==0){
-                document.getElementById("livesearch").innerHTML="";
-                document.getElementById("livesearch").style.border="0px";
-                return;
-            }
-            if(window.XMLHttpRequest){
-                xmlhttp=new XMLHttpRequest();
-            }
-            else{
-                xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
-            }
-            xmlhttp.onreadystatechange=function(){
-                if(this.readyState==4 && this.status==200){
-                    document.getElementById("livesearch").innerHTML=this.responseText;
-                    document.getElementById("livesearch").style.border="1px solid #A5ACB2";
-                }
-            }
-            xmlhttp.open("GET","livesearch.php?q="+str, true);
-            xmlhttp.send();
-        }
-    </script>    
 </head>
-    
+
 <body>
-<!-- Header and Searchbar -->
+<!-- Title -->
     <div class="header">
         <div class="header2">
             <div class="logo">
                 <h1>Auto <span>Exotic</span></h1>
-            </div>
-            <div class="searchbar">
-                <a class="searchextend">
-                    <i class="fa fa-search"></i>
-                </a>
-                
-<!-- Live Search and search bar display -->
-                <input type="text" name="" class="searchtext" placeholder="Enter car brand (e.g. Mercedes)" size="25" onkeyup="showResult(this.value)"/>
-                <div id="livesearch"></div>
-                
-            </div>
-        </div>  
-    </div>
+            </div>            
+        </div>
+    </div> 
+    
+    
+<script>
+// Script that enables the table rows to be clickable
+$(document).ready(function() {
+
+    $('#carTable tr').click(function() {
+        var href = $(this).find("a").attr("href");
+        if(href) {
+            window.location = href;
+        }
+    });
+
+});
+
+function suggestionFunction() {
+  searchInput = document.getElementById("searchBar");
+  fullCaps = searchInput.value.toUpperCase(); // This is done to avoid having the search be case-sensitive
+  carTable = document.getElementById("carTable");
+  carRow = carTable.getElementsByTagName("tr");
+    
+  for (i = 0; i < carRow.length; i++) {
+    carCell = carRow[i].getElementsByTagName("td")[0];
+    if (carCell) {
+      carName = carCell.textContent;
+      if (carName.toUpperCase().indexOf(fullCaps) > -1) {
+        carRow[i].style.display = "";
+      } else {
+        carRow[i].style.display = "none";
+      }
+    }
+  }
+}
+</script>
+
+<!-- The table with cars -->
+<input type="text" id="searchBar" onkeyup="suggestionFunction()" placeholder="Search for names..">
+
+<table id="carTable">
+  <tr class="header1">
+    <th style="width:80%;">Brand</th>
+    <th style="width:60%;">Model</th>
+  </tr>
+  <tr>
+    <td>Audi</td>
+    <td>A3</td>
+  </tr>
+  <tr>
+    <td>Mercedes</td>
+    <td>Sweden</td>
+  </tr>
+  <tr>
+    <td>BMW</td>
+    <td>Germany</td>
+  </tr>
+  <tr>
+    <td>Bently</td>
+    <td>Germany</td>
+  </tr>
+  <tr>
+    <td>Ford</td>
+    <td>Germany</td>
+  </tr>
+  <tr>
+    <td>Jaguar</td>
+    <td>Germany</td>
+  </tr>
+  <tr>
+    <td>Aston Martin</td>
+    <td>Germany</td>
+  </tr>
+  <tr>
+    <td>Mercedes-Benz</td>
+    <td>Germany</td>
+  </tr>
+</table>
+    
+    
 </body>
 </html>
