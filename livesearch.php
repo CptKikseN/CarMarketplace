@@ -1,5 +1,7 @@
 <?php
 
+/*
+
 $xmlDoc=new DOMDocument();
 $xmlDoc->load("links.xml");
 
@@ -43,4 +45,6 @@ if ($hint=="") {
 
 //output the response
 echo $response;
+
+*/
 ?>

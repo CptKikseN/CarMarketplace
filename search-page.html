@@ -9,30 +9,10 @@
     
     <script src="https://code.jquery.com/jquery-3.5.0.min.js" integrity="sha256-xNzN2a4ltkB44Mc/Jz3pT4iU1cmeR0FkXs4pru/JxaQ="crossorigin="anonymous"></script>
     
-    <script>
-        function showResult(str){
-            if(str.length==0){
-                document.getElementById("livesearch").innerHTML="";
-                document.getElementById("livesearch").style.border="0px";
-                return;
-            }
-            if(window.XMLHttpRequest){
-                xmlhttp=new XMLHttpRequest();
-            }
-            else{
-                xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
-            }
-            xmlhttp.onreadystatechange=function(){
-                if(this.readyState==4 && this.status==200){
-                    document.getElementById("livesearch").innerHTML=this.responseText;
-                    document.getElementById("livesearch").style.border="1px solid #A5ACB2";
-                }
-            }
-            xmlhttp.open("GET","livesearch.php?q="+str, true);
-            xmlhttp.send();
-        }
-    </script>    
+
 </head>
+    
+    
     
 <body>
 <!-- Header and Searchbar -->
@@ -47,8 +27,12 @@
                 </a>
                 
 <!-- Live Search and search bar display -->
-                <input type="text" name="" class="searchtext" placeholder="Enter car brand (e.g. Mercedes)" size="25" onkeyup="showResult(this.value)"/>
-                <div id="livesearch"></div>
+                <form autocomplete="off" action="livesearch.php">
+                    <div class="autocomplete" style="width:300px;">
+                        <input id="myInput" type="text" name="myCountry" placeholder="Country">
+                    </div>
+                    <input type="submit">
+                </form>
                 
             </div>
         </div>  
