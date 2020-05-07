@@ -181,3 +181,21 @@ body, html {
     border-radius: 24px;
     cursor: pointer;
 }
+
+/* Car infobox */
+
+.infobox{
+    width: 450px;
+    background: darkslateblue;
+    padding: 40px;
+    text-align: center;
+    margin: auto;
+    margin-top: 5%;
+    color: azure;
+    font-family: 'Krona One', sans-serif;
+}
+
+.infobox h1{
+    font-size: 30px;
+    font-family: 'Krona One', sans-serif;
+}
