@@ -1,3 +1,4 @@
+<!-- Sign-up handler which allows the user to register via e-mail and password in the database -->
 <?php
     
     include 'config.php';
