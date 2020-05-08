@@ -6,8 +6,8 @@
     $pass = '';
     $db = 'userdata';
 
-    $connect = mysqli_connect($server, $user, $pass) or die ("Fatal error");
+    $connect = mysqli_connect($server, $user, $pass) or die ("Connection Failed!");
 
-    $selectdb = mysqli_select_db($connect, $db) or die("error 1");
+    $selectdb = mysqli_select_db($connect, $db) or die("Database Retrieve Fail");
 
 ?>
